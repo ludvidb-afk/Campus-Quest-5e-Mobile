@@ -1,13 +1,13 @@
 {
-  "name": "Campus Quest 5e — V1 Mobile",
+  "name": "Campus Quest 5e — V2 Graphique",
   "short_name": "Campus Quest 5e",
   "description": "Jeu personnel de révision niveau 5e avec Campus, avatar, mini-jeux et progression.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
-  "background_color": "#183158",
-  "theme_color": "#183158",
+  "background_color": "#10243b",
+  "theme_color": "#10243b",
   "icons": [
     {
       "src": "icon-192.png",

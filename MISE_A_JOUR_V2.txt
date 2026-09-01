@@ -1,0 +1,29 @@
+CAMPUS QUEST 5e — MISE À JOUR GRAPHIQUE V2
+
+AMÉLIORATIONS
+- Campus 2,5D entièrement redessiné en style semi-réaliste
+- Bâtiments en volume avec façades, vitrages, toitures, entrées et ombres
+- Profondeur correcte entre le personnage, les arbres et les bâtiments
+- Pelouse texturée, chemins en pierre, bancs et parterres fleuris
+- Fontaine détaillée avec eau animée
+- Végétation plus naturelle et éclairage d'ambiance
+- Avatar mieux proportionné avec relief et ombrages
+- Chambre personnelle et mobilier modernisés
+- Interface plus sobre avec panneaux translucides et meilleure profondeur
+- Optimisation du décor fixe pour conserver une bonne fluidité sur mobile
+
+CONSERVÉ SANS CHANGEMENT
+- 74 questions et 11 matières
+- Mini-jeux, boutique, résidence et personnalisation
+- XP, niveaux, jetons, missions et trophées
+- Sauvegarde locale déjà présente sur l'appareil
+- Fonctionnement hors ligne
+
+INSTALLATION DE LA MISE À JOUR
+1. Remplacer sur GitHub les fichiers fournis par ceux de cette mise à jour.
+2. Attendre la publication de GitHub Pages.
+3. Fermer complètement Campus Quest 5e sur le téléphone.
+4. Rouvrir l'application. La sauvegarde existante est conservée.
+
+Si l'ancien décor reste affiché, fermer puis rouvrir une seconde fois l'application afin que
+le nouveau cache hors ligne prenne le relais.

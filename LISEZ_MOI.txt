@@ -1,10 +1,14 @@
-CAMPUS QUEST 5e — V1 MOBILE COMPLÈTE
+CAMPUS QUEST 5e — V2 GRAPHIQUE MOBILE
 
 Cette version est une application PWA autonome conçue pour un usage personnel sur téléphone.
 Elle n'utilise PAS Godot et ne nécessite PAS de compilation APK.
 
 CONTENU FONCTIONNEL
-- Campus 2,5D explorable avec personnage
+- Campus 2,5D semi-réaliste explorable avec personnage
+- Bâtiments en volume, ombres, lumière, matériaux et vitrages améliorés
+- Végétation détaillée, mobilier extérieur et fontaine animée
+- Avatar aux proportions et ombrages plus naturels
+- Chambre personnelle modernisée avec mobilier en relief
 - Joystick tactile + toucher pour se déplacer
 - Avatar personnalisable : teint, cheveux, coiffure, haut, pantalon, lunettes/sac
 - 11 bâtiments de matières
