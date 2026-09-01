@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#183158">
+<title>Campus Quest 5e — V1 Mobile</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <section id="campusView" class="view active">
+    <header class="top">
+      <img class="logo" src="icon-192.png" alt="">
+      <div class="title"><b>CAMPUS QUEST 5e</b><small id="rankText">Apprenti du Campus</small></div>
+      <div class="hud">
+        <span class="pill">⭐ <b id="hudLevel">1</b></span>
+        <span class="pill">🪙 <b id="hudCoins">0</b></span>
+        <button class="icon-btn" id="soundBtn" type="button" aria-label="Son">🔊</button>
+      </div>
+    </header>
+    <div class="campus-wrap">
+      <canvas id="campusCanvas" aria-label="Campus explorable"></canvas>
+      <div class="campus-tip" id="campusTip">Déplace ton personnage avec le joystick ou touche un endroit du Campus.</div>
+      <div class="campus-nav">
+        <button type="button" data-open="subjects" title="Matières">📚</button>
+        <button type="button" id="mixedShortcut" title="Mélange surprise">🎲</button>
+        <button type="button" id="errorsShortcut" title="Mes erreurs">🧠</button>
+        <button type="button" data-open="avatar" title="Avatar">🧑</button>
+        <button type="button" data-open="progress" title="Progression">🏆</button>
+        <button type="button" id="installShortcut" title="Installer" style="display:none">📲</button>
+      </div>
+      <div class="joy" id="joy"><div class="joy-knob" id="joyKnob"></div></div>
+      <button class="action" id="actionBtn" type="button">Explorer</button>
+      <div class="near-label" id="nearLabel">Approche-toi d'un bâtiment.</div>
+    </div>
+  </section>
+
+  <section id="subjectsView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Les matières</b><small>Choisis ton bâtiment</small></div><div class="hud"><span class="pill">🪙 <b data-coins></b></span></div></header>
+    <main class="content"><div class="subject-list" id="subjectList"></div></main>
+  </section>
+
+  <section id="subjectView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b id="subjectTitle">Matière</b><small id="subjectBuilding"></small></div><div class="hud"><span class="pill">⭐ <b data-level></b></span></div></header>
+    <main class="content">
+      <div class="card">
+        <div class="subject-head"><div class="subject-ico" id="subjectIcon">📘</div><div><h2 id="subjectName"></h2><div class="muted" id="subjectStats"></div></div></div>
+        <div class="big-actions">
+          <button class="btn primary" id="classicBtn">📖 Révision classique — 10 questions</button>
+          <button class="btn gold" id="miniBtn">🎯 Mini-jeu de la matière</button>
+          <button class="btn soft" id="errorsBtn">🧠 Revoir mes erreurs dans cette matière</button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section id="quizView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b id="quizTitle">Révision</b><small id="quizSub"></small></div><div class="hud"><span class="pill">🔥 <b id="streakHud">0</b></span></div></header>
+    <main class="content">
+      <div class="quizbox">
+        <div class="quizmeta"><span id="qCount">1/10</span><span id="qScore">0 point</span></div>
+        <div class="progress"><i id="qBar" style="width:0"></i></div>
+        <div class="prompt" id="qPrompt"></div>
+        <div class="choices" id="qChoices"></div>
+        <div class="feedback" id="qFeedback"></div>
+        <button class="btn primary" id="qNext" style="width:100%;margin-top:12px;display:none">Question suivante →</button>
+      </div>
+    </main>
+  </section>
+
+  <section id="arcadeView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Arcade des révisions</b><small>8 mini-jeux</small></div><div class="hud"><span class="pill">🪙 <b data-coins></b></span></div></header>
+    <main class="content">
+      <div class="grid2" id="arcadeGrid"></div>
+    </main>
+  </section>
+
+  <section id="miniView" class="view">
+    <header class="top"><button class="icon-btn" data-back="arcade">←</button><div class="title"><b id="miniHeader">Mini-jeu</b><small id="miniSub"></small></div><div class="hud"><span class="pill">⭐ <b data-level></b></span></div></header>
+    <main class="content"><div class="mini-area" id="miniArea"></div></main>
+  </section>
+
+  <section id="storeView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Boutique Campus</b><small>Décore ta chambre</small></div><div class="hud"><span class="pill">🪙 <b data-coins></b></span></div></header>
+    <main class="content"><div class="shop" id="shopGrid"></div></main>
+  </section>
+
+  <section id="roomView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Ma chambre</b><small>Résidence Campus</small></div><div class="hud"><span class="pill">🪙 <b data-coins></b></span></div></header>
+    <main class="content">
+      <canvas id="roomCanvas" width="760" height="460"></canvas>
+      <div class="card"><h3>🎒 Mon inventaire</h3><div class="inventory" id="inventory"></div></div>
+    </main>
+  </section>
+
+  <section id="avatarView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Mon personnage</b><small>Personnalisation</small></div></header>
+    <main class="content">
+      <div class="avatar-layout">
+        <canvas id="avatarCanvas" width="400" height="500"></canvas>
+        <div class="card">
+          <h3>🧑 Crée ton avatar</h3>
+          <div class="form-row"><label>Teint<input type="color" id="skinColor"></label><label>Cheveux<input type="color" id="hairColor"></label></div>
+          <div class="form-row"><label>Haut<input type="color" id="shirtColor"></label><label>Pantalon<input type="color" id="pantsColor"></label></div>
+          <div class="form-row"><label>Coiffure<select id="hairStyle"><option value="0">Courte</option><option value="1">Mi-longue</option><option value="2">Bouclée</option></select></label><label>Accessoire<select id="accessory"><option value="none">Aucun</option><option value="glasses">Lunettes</option><option value="backpack">Sac à dos</option></select></label></div>
+          <button class="btn gold" id="saveAvatar" style="width:100%">Enregistrer mon personnage</button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <section id="progressView" class="view">
+    <header class="top"><button class="icon-btn" data-back="campus">←</button><div class="title"><b>Ma progression</b><small>Tout le Campus</small></div><div class="hud"><span class="pill">⭐ <b data-level></b></span></div></header>
+    <main class="content">
+      <div class="card"><h3>🎓 Profil</h3><div id="profile"></div></div>
+      <div class="card"><h3>📅 Missions du jour</h3><div class="daily" id="daily"></div></div>
+      <div class="card"><h3>🏆 Trophées</h3><div class="badges" id="badges"></div></div>
+      <div class="card"><h3>📊 Matières</h3><div id="subjectProgress"></div></div>
+      <div class="card"><h3>🧠 À retravailler</h3><div id="errorProgress"></div></div>
+      <div class="card install" id="installCard"><h3>📲 Installer l'application</h3><p class="muted">Ajoute Campus Quest 5e à l'écran d'accueil pour l'utiliser comme une vraie application.</p><button class="btn gold" id="installBtn">Installer Campus Quest 5e</button></div>
+      <button class="btn bad" id="resetState" style="width:100%">Réinitialiser ma sauvegarde</button>
+    </main>
+  </section>
+</div>
+<div class="toast" id="toast"></div>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

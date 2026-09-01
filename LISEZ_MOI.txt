@@ -1,0 +1,50 @@
+CAMPUS QUEST 5e — V1 MOBILE COMPLÈTE
+
+Cette version est une application PWA autonome conçue pour un usage personnel sur téléphone.
+Elle n'utilise PAS Godot et ne nécessite PAS de compilation APK.
+
+CONTENU FONCTIONNEL
+- Campus 2,5D explorable avec personnage
+- Joystick tactile + toucher pour se déplacer
+- Avatar personnalisable : teint, cheveux, coiffure, haut, pantalon, lunettes/sac
+- 11 bâtiments de matières
+- Arcade des révisions
+- Boutique Campus
+- Résidence + chambre personnelle
+- Inventaire, achat et équipement de meubles
+- 74 questions de révision
+- Révision des erreurs
+- XP, niveaux, rangs, jetons et séries
+- Progression par matière
+- Trophées
+- Missions quotidiennes
+- Mini-jeux : multiplications, français, frise historique, géographie, chaîne alimentaire,
+  circuit électrique, robot programmeur, langues, EMC
+- Sauvegarde locale automatique
+- Son activable/désactivable
+- Installation sur l'écran d'accueil
+- Fonctionnement hors ligne après la première ouverture
+
+INSTALLATION SIMPLE VIA GITHUB PAGES
+1. Dans un dépôt GitHub, envoie à la racine tous les fichiers de ce dossier :
+   index.html
+   app.js
+   styles.css
+   questions.js
+   manifest.webmanifest
+   sw.js
+   icon-192.png
+   icon-512.png
+2. GitHub > Settings > Pages.
+3. Build and deployment : Source = Deploy from a branch.
+4. Branch = main ; dossier = /(root) ; Save.
+5. Ouvre l'adresse fournie par GitHub Pages sur ton téléphone Android avec Chrome.
+6. Utilise le bouton 📲 de l'application ou Chrome > ⋮ > Ajouter à l'écran d'accueil / Installer.
+
+TEST SUR ORDINATEUR
+- index.html peut être ouvert directement pour tester la majorité du jeu.
+- L'installation PWA et le mode hors ligne nécessitent GitHub Pages (HTTPS).
+
+NOTE
+Le Campus utilise des graphismes 2,5D générés localement par Canvas : aucun fichier 3D externe,
+aucun moteur de jeu et aucun téléchargement supplémentaire ne sont nécessaires.
